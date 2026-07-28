@@ -1,0 +1,6 @@
+{
+  "name": "MUN Association of the Kyrgyz Republic (MUNAKR)",
+  "description": "Официальная платформа Ассоциации Модели ООН Кыргызской Республики (MUNAKR). Календарь национальных симуляций, новости международной дипломатии и академическое руководство для молодых дипломатов.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

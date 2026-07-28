@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <script>
+      window.global = window;
+      window.process = { env: { NODE_ENV: 'development' } };
+      window.addEventListener('error', function(e) {
+        document.body.innerHTML += '<div style="color: red; padding: 20px; z-index: 9999; position: relative;">Global Error: ' + e.message + ' | ' + e.filename + ':' + e.lineno + '</div>';
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        document.body.innerHTML += '<div style="color: red; padding: 20px; z-index: 9999; position: relative;">Unhandled Promise: ' + e.reason + '</div>';
+      });
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx" crossorigin="anonymous"></script>
+  </body>
+</html>
+

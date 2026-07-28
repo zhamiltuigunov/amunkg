@@ -1,0 +1,148 @@
+    try {
+      return JSON.parse(localStorage.getItem("amunkg_ratings") || "[]");
+    } catch {
+--
+    if (rawTickets) {
+      try { setTickets(JSON.parse(rawTickets)); } catch (e) {}
+    }
+--
+    if (rawJoin) {
+      try { setJoinRequests(JSON.parse(rawJoin)); } catch (e) {}
+    }
+--
+    if (rawCreate) {
+      try { setCreationRequests(JSON.parse(rawCreate)); } catch (e) {}
+    }
+--
+    const savedSecEvents = localStorage.getItem("munakr_security_events");
+    if (savedSecEvents) { try { setSecurityEvents(JSON.parse(savedSecEvents)); } catch(e){} }
+    const savedAdminLogs = localStorage.getItem("munakr_admin_logs");
+    if (savedAdminLogs) { try { setAdminLogs(JSON.parse(savedAdminLogs)); } catch(e){} }
+
+--
+      try {
+        const usersList = JSON.parse(savedUsers);
+        let modified = false;
+--
+         try {
+            const list: AppUser[] = usersOverride || JSON.parse(savedUsers as string);
+            const idx = list.findIndex((u: AppUser) => u.id === userId || u.email === email);
+--
+        try {
+          let usersList = JSON.parse(saved);
+          userExists = usersList.some((u: any) => (u.email || "").toLowerCase() === recoveryEmail.trim().toLowerCase());
+--
+      try {
+        let usersList: AppUser[] = JSON.parse(saved);
+        const idx = usersList.findIndex((u) => (u.email || "").toLowerCase() === recoveryEmail.trim().toLowerCase());
+--
+      try {
+        usersList = JSON.parse(saved);
+      } catch (e) {
+--
+      try {
+        usersList = JSON.parse(saved);
+      } catch (e) {
+--
+    if (!saved) return;
+    let usersList: any[] = JSON.parse(saved);
+    const idx = usersList.findIndex((u: any) => (u.email || "").toLowerCase() === verifyEmail.toLowerCase());
+--
+    if (!saved) return;
+    let usersList: any[] = JSON.parse(saved);
+    const idx = usersList.findIndex((u: any) => (u.email || "").toLowerCase() === verifyEmail.toLowerCase());
+--
+    if (savedUsers) {
+      let usersList: AppUser[] = JSON.parse(savedUsers);
+      const idx = usersList.findIndex(u => u.id === currentUser.id);
+--
+    if (savedUsers) {
+      const usersList: AppUser[] = JSON.parse(savedUsers);
+      const exists = usersList.some(u => (u.email || "").toLowerCase() === newEmailCandidate);
+--
+        if (savedUsers) {
+          let usersList: AppUser[] = JSON.parse(savedUsers);
+          const idx = usersList.findIndex(u => u.id === currentUser.id);
+--
+        if (savedUsers) {
+          let usersList: AppUser[] = JSON.parse(savedUsers);
+          usersList = usersList.filter(u => u.id !== currentUser.id);
+--
+      try { 
+         let usersList = JSON.parse(saved); 
+         const updatedUsers = usersList.map((u: any) => u.id === currentUser.id ? { ...u, preferences: newPrefs } : u);
+--
+              try {
+                const usersList = JSON.parse(savedUsers);
+                const uIdx = usersList.findIndex((u: AppUser) => u.id === confToDelete.creatorId);
+--
+          try {
+            const usersList = JSON.parse(saved);
+            const uIdx = usersList.findIndex((u: AppUser) => u.id === targetReq.userId);
+--
+                                              const saved = localStorage.getItem("munakr_inquiries");
+                                              const exTickets = saved ? JSON.parse(saved) : [];
+                                              const updated = [newTicket, ...exTickets];
+--
+                      try {
+                        const parsed = JSON.parse(savedUsers);
+                        if (parsed.some((u: any) => u.status === "banned_temporary" && (u.adminReason || "").includes("System Auto-Ban"))) {
+--
+                          try {
+                            logs = JSON.parse(logsStr).sort((a: any, b: any) => b.timestamp - a.timestamp);
+                          } catch(err) {
+--
+                              try {
+                                logs = JSON.parse(logsStr).sort((a: any, b: any) => b.timestamp - a.timestamp);
+                              } catch(err) {
+--
+                     try {
+                       logs = JSON.parse(logsStr).sort((a: any, b: any) => b.timestamp - a.timestamp).slice(0, 50);
+                     } catch(err) {
+--
+                    if (saved) {
+                      try { usersList = JSON.parse(saved); } catch(e) {}
+                    }
+--
+                          if (saved) {
+                             try { usersList = JSON.parse(saved); } catch(e) {}
+                          }
+--
+                          let secEventsList: any[] = [];
+                          if (savedSecEvents) { try { secEventsList = JSON.parse(savedSecEvents); } catch(e){} }
+                          const savedAdminLogs = localStorage.getItem("munakr_admin_logs");
+                          let adminLogsList: any[] = [];
+                          if (savedAdminLogs) { try { adminLogsList = JSON.parse(savedAdminLogs); } catch(e){} }
+
+--
+                        if (saved) {
+                          try { usersList = JSON.parse(saved); } catch(e) {}
+                        }
+--
+                                              try {
+                                                 const usersList = JSON.parse(saved);
+                                                 const user = usersList.find((u: any) => u.id === ev.userId);
+--
+                            try { 
+                               let usersList = JSON.parse(saved); 
+                               const updatedUsers = usersList.map((u: any) => u.id === currentUser.id ? { ...u, preferences: newPrefs } : u);
+--
+                                    try { 
+                                       let usersList: any[] = JSON.parse(saved); 
+                                       const updatedUsers = usersList.map(u => u.id === currentUser.id ? { ...u, preferences: updatedUser.preferences } : u);
+--
+                                    try { 
+                                       let usersList: any[] = JSON.parse(saved); 
+                                       const updatedUsers = usersList.map(u => u.id === currentUser.id ? { ...u, preferences: updatedUser.preferences } : u);
+--
+                         if (!saved) return;
+                         let usersList: AppUser[] = JSON.parse(saved);
+                         const tIdx = usersList.findIndex(u => u.id === actionModal.targetUser!.id);
+--
+                            if (savedReqs) {
+                                let reqs = JSON.parse(savedReqs);
+                                let reqsChanged = false;
+--
+                            if (savedConfReqs) {
+                                let creqs = JSON.parse(savedConfReqs);
+                                let creqsChanged = false;

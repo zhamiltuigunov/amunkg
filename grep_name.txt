@@ -1,0 +1,91 @@
+39:  name: string;
+119:  const [actionEditUser, setActionEditUser] = useState({ name: "", email: "" });
+163:  const [loginUsername, setLoginUsername] = useState("");
+187:       setEditName(currentUser.name);
+356:      adminName: currentUser.name,
+482:              name: user.name,
+510:    if (!loginUsername || !loginPassword) {
+515:    const trimmedUsername = loginUsername.trim();
+518:      trimmedUsername === "shadowmeetube@gmail.com.2026-2027.start.admin.panel" && loginPassword === "unknow.password.1016.1016.nonameuser.password.tuigunov.jamil.password"
+522:        name: isEn ? "Jamil Tuygunov" : "Джамиль Туйгунов",
+529:      setLoginUsername("");
+536:    if (trimmedUsername === "user@example.com" && loginPassword === "password") {
+539:        name: isEn ? "Standard Delegate" : "Стандартный Делегат",
+552:    if (trimmedUsername === "org@example.com" && loginPassword === "password") {
+555:        name: isEn ? "MUN Director" : "Директор Мероприятия",
+577:    // Find user with matching email and password (case-insensitive username)
+578:    const normalizedUsername = loginUsername.trim().toLowerCase();
+580:    // Find user by email or name to track failed attempts if password is wrong
+582:      (u) => (u.email.toLowerCase() === normalizedUsername || u.name.toLowerCase() === normalizedUsername)
+586:      (u) => ((u.email || "").toLowerCase() === normalizedUsername || (u.name || "").toLowerCase() === normalizedUsername) && u.password === finalLoginPassword
+589:    console.log("Login Check:", "Username:", normalizedUsername, "Password:", finalLoginPassword, "Found user by email/name:", foundUserByEmailOrName, "Matched:", matched);
+669:           body: JSON.stringify({ email: matched.email, name: matched.name })
+686:        name: matched.name,
+701:      setLoginUsername("");
+705:      setLoginError(isEn ? "Invalid username or password. Please try again." : "Неверный логин или пароль. Попробуйте еще раз.");
+760:      name: regName.trim(),
+778:        body: JSON.stringify({ email: normalizedEmail, name: newUser.name })
+824:            name: twoFactorPendingUser.name,
+838:          setLoginUsername("");
+887:          name: user.name,
+925:        body: JSON.stringify({ email: verifyEmail, name: user.name })
+953:    if (!currentUser || editName.trim() === currentUser.name) return;
+962:         const oldName = usersList[idx].name;
+963:         usersList[idx].name = newName;
+967:         const updatedUser = { ...currentUser, name: newName };
+972:         logAdminAction("restrict", updatedUser, "Self-Update", `User changed name from ${oldName} to ${newName}`); 
+998:        body: JSON.stringify({ email: newEmailCandidate, name: currentUser.name })
+1243:            "Отмена конференции: " + confToDelete.name,
+1244:            "Conference Cancelled: " + (confToDelete.nameEn || confToDelete.name),
+1290:            name: confName,
+1291:            nameEn: confNameEn || undefined,
+1320:          "Изменение даты проведения: " + existingConf.name,
+1321:          "Conference Date Changed: " + (existingConf.nameEn || existingConf.name),
+1330:        name: confName,
+1331:        nameEn: confNameEn || undefined,
+1354:        "Новая конференция: " + newConf.name,
+1355:        "New Conference: " + (newConf.nameEn || newConf.name),
+1382:    setConfName(conf.name);
+1383:    setConfNameEn(conf.nameEn || "");
+1400:    setShowConfEnFields(!!(conf.nameEn || conf.descriptionEn || conf.orgEn || conf.locationEn || conf.committeesEn));
+1514:          name: targetReq.confData.name || "Новая Конференция",
+1515:          nameEn: targetReq.confData.nameEn,
+1542:          "Новая конференция: " + newConf.name,
+1543:          "New Conference: " + (newConf.nameEn || newConf.name),
+1667:                {currentUser.name[0]}
+1670:                <p className="font-bold text-slate-800 dark:text-slate-200">{currentUser.name}</p>
+1792:                              value={loginUsername}
+1793:                              onChange={(e) => setLoginUsername(e.target.value)}
+2359:                                 <h4 className="font-bold text-[#1a365d] dark:text-[#80add0] text-sm font-serif">{isEn ? (conf.nameEn || conf.name) : conf.name}</h4>
+2407:                                              name: currentUser.name,
+2410:                                              subject: `[DELETE REQUEST] ${conf.name}`,
+2411:                                              message: `Организатор просит удалить или досрочно завершить конференцию: ${conf.name} (ID: ${conf.id}).`,
+2583:                          <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 font-serif">{isEn ? (req.confData.nameEn || translateToEn(req.confData.name) || "Untitled") : (req.confData.name || "Без названия")}</h4>
+2795:                           name: isEn && conf.nameEn ? conf.nameEn : conf.name,
+2821:                                      const name = `"${String(row.name).replace(/"/g, '""')}"`;
+2822:                                      csvRows.push(`${name},${row.participants}`);
+2875:                                        <XAxis dataKey="name" tick={{fontSize: 10, fill: '#8b98a9', fontWeight: 600}} tickLine={false} axisLine={false} dy={10} />
+2883:                                        <Bar dataKey="participants" name={isEn ? "Participants" : "Участников"} fill="#1a365d" radius={[4, 4, 0, 0]} barSize={40} />
+3336:                              placeholder="Author name in English"
+3688:                          <h4 className="font-sans font-bold text-slate-900 dark:text-slate-100 truncate">{isEn ? (conf.nameEn || translateToEn(conf.name)) : conf.name}</h4>
+3794:                            <p><strong>Заявитель:</strong> {ticket.name}</p>
+3893:                            <p className="font-bold text-[#1a365d] text-sm font-serif">{isEn ? (req.confData.nameEn || translateToEn(req.confData.name) || "No title") : (req.confData.name || "Без названия")}</p>
+4088:                          <p className="font-bold text-slate-800 dark:text-slate-200 text-sm">{u.name}</p>
+4186:                             "ФИО / Name": u.name,
+4229:                                   (u.name && u.name.toLowerCase().includes(sq)) ||
+4241:                              <p className="font-bold text-slate-800 dark:text-slate-200 text-sm">{u.name}</p>
+4286:                              <p className="font-bold text-sm text-slate-800 dark:text-slate-200">{secSelectedUser.name}</p>
+4340:                                 setActionModal({ isOpen: true, type: "edit_user", targetUser: secSelectedUser }); setActionReason(""); setActionComment(""); setActionEditUser({ name: secSelectedUser.name, email: secSelectedUser.email });
+4537:                                  {conf ? (isEn ? (conf.nameEn || translateToEn(conf.name)) : conf.name) : (isEn ? "Conference" : "Конференция")}
+4553:                                            applicantName: currentUser.name
+4592:                                        onClick={() => setRatingModal({ confId: conf.id, confName: conf.name })}
+4758:                                   const confName = conf ? (isEn && conf.nameEn ? conf.nameEn : conf.name) : 'Unknown';
+4828:                                      {conf?.name}
+5142:                        {currentUser.name[0]}
+5145:                        <h2 className="text-xl font-sans font-bold">{currentUser.name}</h2>
+5210:                    <button type="submit" disabled={editName.trim() === currentUser.name} className="bg-slate-900 dark:bg-slate-700 disabled:bg-slate-300 dark:disabled:bg-slate-800 disabled:cursor-not-allowed hover:bg-slate-800 dark:hover:bg-slate-600 text-white dark:text-slate-100 text-[10px] font-bold uppercase px-4 py-2 rounded transition">
+5538:                  <p className="text-slate-600 dark:text-slate-400">{isEn ? "Allows admins to modify the user's name or email address directly." : "Позволяет администратору изменить имя или Email пользователя напрямую. Старый Email отвязывается."}</p>
+5573:                <p className="font-bold">{actionModal.targetUser.name} <span className="font-normal text-xs text-slate-500">[{actionModal.targetUser.email}]</span></p>
+5587:                     <input type="text" value={actionEditUser.name} onChange={e => setActionEditUser(p => ({...p, name: e.target.value}))} className="w-full border rounded p-2 text-sm mt-1 focus:border-slate-500 py-1.5" />
+5677:                            usersList[tIdx].name = actionEditUser.name;
+5707:                                const newSession = { ...currentUser, name: actionEditUser.name, email: actionEditUser.email };

@@ -1,0 +1,223 @@
+1:import { useState, useEffect } from "react";
+70:  const [toast, setToast] = useState<{message: string; type: "success" | "error" | "warning" | "info"} | null>(null);
+94:  const [adminSubTab, setAdminSubTab] = useState<"dashboard" | "news" | "conferences" | "tickets" | "create_requests" | "delete_requests" | "admins" | "security">(
+97:  const [isUpdatingRole, setIsUpdatingRole] = useState<string | null>(null);
+98:  const [userTab, setUserTab] = useState<"dashboard" | "profile" | "notifications" | "delegates" | "support" | "applications">("profile");
+101:  const [securityEvents, setSecurityEvents] = useState<SecurityEvent[]>([]);
+102:  const [adminLogs, setAdminLogs] = useState<AdminActionLog[]>([]);
+103:  const [secFilterRisk, setSecFilterRisk] = useState<"All" | RiskLevel>("All");
+104:  const [auditFilterType, setAuditFilterType] = useState<string>("All");
+105:  const [auditFilterDate, setAuditFilterDate] = useState<string>("All");
+106:  const [auditSearchQuery, setAuditSearchQuery] = useState("");
+107:  const [secSearchQuery, setSecSearchQuery] = useState("");
+109:  const [secSelectedUser, setSecSelectedUser] = useState<AppUser | null>(null);
+111:  const [securityInfoModal, setSecurityInfoModal] = useState(false);
+112:  const [actionModal, setActionModal] = useState<{
+117:  const [actionReason, setActionReason] = useState("");
+118:  const [actionComment, setActionComment] = useState("");
+119:  const [actionDays, setActionDays] = useState(1);
+120:  const [actionNewRole, setActionNewRole] = useState<"user"|"organizer"|"admin">("user");
+121:  const [actionEditUser, setActionEditUser] = useState({ name: "", email: "" });
+122:  const [actionManualPassword, setActionManualPassword] = useState("");
+125:  const [authMode, setAuthMode] = useState<"login" | "register" | "verify" | "recovery" | "recovery_code" | "recovery_reset" | "2fa">("login");
+126:  const [twoFactorCodeInput, setTwoFactorCodeInput] = useState("");
+127:  const [twoFactorMsg, setTwoFactorMsg] = useState("");
+128:  const [twoFactorHash, setTwoFactorHash] = useState("");
+129:  const [twoFactorPendingUser, setTwoFactorPendingUser] = useState<AppUser | null>(null);
+131:  const [recoveryEmail, setRecoveryEmail] = useState("");
+132:  const [recoveryCode, setRecoveryCode] = useState("");
+133:  const [recoveryCodeInput, setRecoveryCodeInput] = useState("");
+134:  const [recoveryNewPassword, setRecoveryNewPassword] = useState("");
+135:  const [recoveryMsg, setRecoveryMsg] = useState("");
+136:  const [verifyCode, setVerifyCode] = useState("");
+137:  const [verifyEmail, setVerifyEmail] = useState("");
+138:  const [verifyError, setVerifyError] = useState("");
+139:  const [verifyMsg, setVerifyMsg] = useState("");
+140:  const [verifyTestUrl, setVerifyTestUrl] = useState("");
+141:  const [verifyAttempts, setVerifyAttempts] = useState(0);
+143:  const [showLoginPassword, setShowLoginPassword] = useState(false);
+144:  const [showRegPassword, setShowRegPassword] = useState(false);
+145:  const [showRecoveryPassword, setShowRecoveryPassword] = useState(false);
+146:  const [isLoading, setIsLoading] = useState(false);
+149:  const [modalAction, setModalAction] = useState<{
+154:  const [modalInput, setModalInput] = useState("");
+165:  const [loginUsername, setLoginUsername] = useState("");
+166:  const [loginPassword, setLoginPassword] = useState("");
+167:  const [loginError, setLoginError] = useState("");
+170:  const [regName, setRegName] = useState("");
+171:  const [regEmail, setRegEmail] = useState("");
+172:  const [regPassword, setRegPassword] = useState("");
+173:  const [regAgreeTerms, setRegAgreeTerms] = useState(false);
+174:  const [regError, setRegError] = useState("");
+175:  const [regSuccess, setRegSuccess] = useState(false);
+178:  const [editName, setEditName] = useState("");
+179:  const [editEmail, setEditEmail] = useState("");
+180:  const [editEmailOTP, setEditEmailOTP] = useState("");
+181:  const [editEmailStep, setEditEmailStep] = useState<"idle"|"otp">("idle");
+182:  const [editEmailPending, setEditEmailPending] = useState("");
+183:  const [editEmailHash, setEditEmailHash] = useState("");
+184:  const [editEmailLoading, setEditEmailLoading] = useState(false);
+187:  useEffect(() => {
+195:  const [newTitle, setNewTitle] = useState("");
+196:  const [newTitleEn, setNewTitleEn] = useState("");
+197:  const [newExcerpt, setNewExcerpt] = useState("");
+198:  const [newExcerptEn, setNewExcerptEn] = useState("");
+199:  const [newContent, setNewContent] = useState("");
+200:  const [newContentEn, setNewContentEn] = useState("");
+201:  const [newCategory, setNewCategory] = useState<NewsPost["category"]>("Security");
+202:  const [newAuthor, setNewAuthor] = useState("");
+203:  const [newAuthorEn, setNewAuthorEn] = useState("");
+204:  const [newImage, setNewImage] = useState("");
+205:  const [postAddedMsg, setPostAddedMsg] = useState(false);
+206:  const [editingPostId, setEditingPostId] = useState<string | null>(null);
+207:  const [showNewsEnFields, setShowNewsEnFields] = useState(false);
+210:  const [showConfEnFields, setShowConfEnFields] = useState(false);
+211:  const [confName, setConfName] = useState("");
+212:  const [confNameEn, setConfNameEn] = useState("");
+213:  const [confOrg, setConfOrg] = useState("");
+214:  const [confOrgEn, setConfOrgEn] = useState("");
+215:  const [confLocation, setConfLocation] = useState("");
+216:  const [confLocationEn, setConfLocationEn] = useState("");
+217:  const [confFee, setConfFee] = useState("");
+218:  const [confCommittees, setConfCommittees] = useState("");
+219:  const [confCommitteesEn, setConfCommitteesEn] = useState("");
+220:  const [confType, setConfType] = useState<MUNConference["type"]>("International");
+221:  const [confDesc, setConfDesc] = useState("");
+222:  const [confDescEn, setConfDescEn] = useState("");
+223:  const [confStartDate, setConfStartDate] = useState("");
+224:  const [confEndDate, setConfEndDate] = useState("");
+225:  const [confEarlyBirdStart, setConfEarlyBirdStart] = useState("");
+226:  const [confEarlyBirdEnd, setConfEarlyBirdEnd] = useState("");
+227:  const [confStandardEnd, setConfStandardEnd] = useState("");
+228:  const [confRegDeadline, setConfRegDeadline] = useState("");
+229:  const [confAddedMsg, setConfAddedMsg] = useState(false);
+230:  const [editingConfId, setEditingConfId] = useState<string | null>(null);
+233:  const [confirmDialog, setConfirmDialog] = useState<{
+240:  const [tickets, setTickets] = useState<InboundTicket[]>([]);
+241:  const [joinRequests, setJoinRequests] = useState<ConferenceJoinRequest[]>([]);
+242:  const [delegatesFilter, setDelegatesFilter] = useState<"all" | "new" | "awaiting_payment" | "payment_review" | "confirmed" | "rejected">("all");
+243:  const [createReqFilter, setCreateReqFilter] = useState<"all" | "new" | "approved" | "rejected">("all");
+244:  const [creationRequests, setCreationRequests] = useState<ConferenceCreationRequest[]>([]);
+245:  const [viewingTextModal, setViewingTextModal] = useState<{ title: string; text: string; applicantName: string } | null>(null);
+246:  const [pendingReceipt, setPendingReceipt] = useState<{reqId: string, url: string, name: string} | null>(null);
+247:  const [ratingModal, setRatingModal] = useState<{ confId: string; confName: string } | null>(null);
+248:  const [confRating, setConfRating] = useState(5);
+249:  const [confRatingComment, setConfRatingComment] = useState("");
+251:  const [ratings, setRatings] = useState<ConferenceRating[]>(() => {
+253:      return JSON.parse(localStorage.getItem("amunkg_ratings") || "[]");
+255:      return INITIAL_RATINGS || [];
+258:  const [replyingTicketId, setReplyingTicketId] = useState<string | null>(null);
+259:  const [activeReplyText, setActiveReplyText] = useState("");
+260:  const [deleteRequesting, setDeleteRequesting] = useState<string | null>(null);
+263:  useEffect(() => {
+326:      return updated;
+355:    if (!currentUser) return;
+373:      return updated;
+450:      return;
+454:      return;
+458:      return;
+462:      return;
+516:      return;
+535:      return;
+552:      return;
+568:      return;
+598:        return;
+603:        return;
+610:          return;
+647:      return;
+650:      return;
+662:        return;
+685:        return;
+717:    if (!regName || !regEmail || !regPassword) return;
+721:      return;
+727:      return;
+731:      return;
+735:      return;
+739:      return;
+757:      return;
+814:    if (!twoFactorPendingUser) return;
+861:    if (!saved) return;
+866:      return;
+872:      return;
+918:    if (!saved) return;
+921:    if (idx === -1) return;
+957:    if (!currentUser || editName.trim() === currentUser.name) return;
+984:    if (!currentUser || editEmail.trim() === currentUser.email) return;
+993:        return;
+1025:      return;
+1072:        if (!currentUser) return;
+1092:    if (!base64Data) return;
+1118:    if (!currentUser) return;
+1158:       return;
+1160:    if (!newTitle || !newContent || !newAuthor) return;
+1166:          return {
+1180:        return p;
+1281:       return;
+1283:    if (!confName || !confOrg || !confLocation || !confFee) return;
+1292:          return {
+1314:        return c;
+1462:        return { ...t, status: nextStatus };
+1464:      return t;
+1475:       return;
+1477:    if (!activeReplyText.trim()) return;
+1481:        return {
+1494:      return t;
+1507:        return { ...r, status: newStatus, rejectionReason: reason };
+1509:      return r;
+1574:        return { ...r, ...updates };
+1576:      return r;
+1583:    if (!ratingModal || !currentUser) return;
+1619:  return (
+2309:                    return (
+2318:                  return (
+2353:                        return (
+2460:                                      return (
+2525:                              if (!delTicket) return null;
+2526:                              return (
+2791:                          return <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>;
+2795:                    return null;
+2811:                        return (
+2985:                            return;
+2990:                            return `${log.id},${d.toLocaleDateString()},${d.toLocaleTimeString()},"${log.adminName}","${log.targetUserEmail}","${log.actionType}","${log.category || "Account"}","${log.reason}","${log.comment}"`;
+3074:                        return <div className="ml-6 flex items-center gap-2 text-sm text-slate-500 h-20"><Info className="w-5 h-5"/> {isEn ? "No actions recorded yet." : "Действия пока не записаны."}</div>;
+3077:                     return logs.map((log) => {
+3087:                       return (
+3949:                    if (createReqFilter === "new") return req.status === "pending";
+3950:                    if (createReqFilter === "approved") return req.status === "approved";
+3951:                    if (createReqFilter === "rejected") return req.status === "rejected";
+3952:                    return true;
+3958:                    if (isNewA !== isNewB) return isNewB - isNewA; 
+3962:                    if (isAppA !== isAppB) return isAppB - isAppA;
+3964:                    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+3968:                    return (
+3981:                  return (
+4070:                    return (
+4080:                  return (
+4178:                      return <div className="text-xs text-slate-500 italic">Нет зарегистрированных пользователей.</div>;
+4180:                    return usersList.map(u => (
+4295:                             return {
+4339:                        return usersList
+4343:                            if (!secSearchQuery) return true;
+4345:                            return (u.email && u.email.toLowerCase().includes(sq)) || 
+4353:                             return (rm[b.riskLevel as keyof typeof rm] || 0) - (rm[a.riskLevel as keyof typeof rm] || 0);
+4616:                          return (
+4844:                        if (delegatesFilter === "new") return r.status === "pending";
+4845:                        if (delegatesFilter === "awaiting_payment") return r.status === "awaiting_payment";
+4846:                        if (delegatesFilter === "payment_review") return r.status === "payment_review";
+4847:                        if (delegatesFilter === "confirmed") return r.status === "confirmed";
+4848:                        if (delegatesFilter === "rejected") return r.status === "rejected" || r.status === "payment_rejected";
+4849:                        return true;
+4855:                      if (isNewA !== isNewB) return isNewB - isNewA; 
+4857:                      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+4861:                      return (
+4879:                    return (
+4886:                                   if (!str) return '""';
+4888:                                   return `"${replaced}"`;
+4947:                            return (
+5381:                    return (
+5677:                        showToast(isEn ? "Reason and Comment are mandatory constraints." : "Причина и Комментарий являются обязательными ограничениями.", "error"); return; 
+5682:                         if (!saved) return;
+5685:                         if (tIdx === -1) return;
+5694:                            return;
+5714:                                reqs = reqs.map((r: any) => { if (r.userId === usersList[tIdx].id) { reqsChanged = true; return { ...r, userEmail: actionEditUser.email }; } return r; });
+5726:                                creqs = creqs.map((cr: any) => { if (cr.userId === usersList[tIdx].id) { creqsChanged = true; return { ...cr, userEmail: actionEditUser.email }; } return cr; });

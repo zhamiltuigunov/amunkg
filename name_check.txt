@@ -1,0 +1,46 @@
+187:       setEditName(currentUser.name);
+356:      adminName: currentUser.name,
+482:              name: user.name,
+582:      (u) => (u.email.toLowerCase() === normalizedUsername || u.name.toLowerCase() === normalizedUsername)
+586:      (u) => ((u.email || "").toLowerCase() === normalizedUsername || (u.name || "").toLowerCase() === normalizedUsername) && u.password === finalLoginPassword
+669:           body: JSON.stringify({ email: matched.email, name: matched.name })
+686:        name: matched.name,
+778:        body: JSON.stringify({ email: normalizedEmail, name: newUser.name })
+824:            name: twoFactorPendingUser.name,
+887:          name: user.name,
+925:        body: JSON.stringify({ email: verifyEmail, name: user.name })
+953:    if (!currentUser || editName.trim() === currentUser.name) return;
+962:         const oldName = usersList[idx].name;
+963:         usersList[idx].name = newName;
+998:        body: JSON.stringify({ email: newEmailCandidate, name: currentUser.name })
+1243:            "Отмена конференции: " + confToDelete.name,
+1244:            "Conference Cancelled: " + (confToDelete.nameEn || confToDelete.name),
+1320:          "Изменение даты проведения: " + existingConf.name,
+1321:          "Conference Date Changed: " + (existingConf.nameEn || existingConf.name),
+1354:        "Новая конференция: " + newConf.name,
+1355:        "New Conference: " + (newConf.nameEn || newConf.name),
+1382:    setConfName(conf.name);
+1383:    setConfNameEn(conf.nameEn || "");
+1400:    setShowConfEnFields(!!(conf.nameEn || conf.descriptionEn || conf.orgEn || conf.locationEn || conf.committeesEn));
+1514:          name: targetReq.confData.name || "Новая Конференция",
+1515:          nameEn: targetReq.confData.nameEn,
+1542:          "Новая конференция: " + newConf.name,
+1543:          "New Conference: " + (newConf.nameEn || newConf.name),
+1667:                {currentUser.name[0]}
+2407:                                              name: currentUser.name,
+2410:                                              subject: `[DELETE REQUEST] ${conf.name}`,
+2411:                                              message: `Организатор просит удалить или досрочно завершить конференцию: ${conf.name} (ID: ${conf.id}).`,
+2795:                           name: isEn && conf.nameEn ? conf.nameEn : conf.name,
+2821:                                      const name = `"${String(row.name).replace(/"/g, '""')}"`;
+3794:                            <p><strong>Заявитель:</strong> {ticket.name}</p>
+4186:                             "ФИО / Name": u.name,
+4229:                                   (u.name && u.name.toLowerCase().includes(sq)) ||
+4340:                                 setActionModal({ isOpen: true, type: "edit_user", targetUser: secSelectedUser }); setActionReason(""); setActionComment(""); setActionEditUser({ name: secSelectedUser.name, email: secSelectedUser.email });
+4537:                                  {conf ? (isEn ? (conf.nameEn || translateToEn(conf.name)) : conf.name) : (isEn ? "Conference" : "Конференция")}
+4553:                                            applicantName: currentUser.name
+4592:                                        onClick={() => setRatingModal({ confId: conf.id, confName: conf.name })}
+4758:                                   const confName = conf ? (isEn && conf.nameEn ? conf.nameEn : conf.name) : 'Unknown';
+4828:                                      {conf?.name}
+5142:                        {currentUser.name[0]}
+5677:                            usersList[tIdx].name = actionEditUser.name;
+5707:                                const newSession = { ...currentUser, name: actionEditUser.name, email: actionEditUser.email };
